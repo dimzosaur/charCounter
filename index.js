@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const readLine = require('readline');
 // Generates a filepath to the given filename
-const filePath = filename => path.join(__dirname, filename);
+// const filePath = filename => path.join(__dirname, filename);
 
 const charCounter = string => {
   // Remove all white spaces in the string
@@ -23,8 +23,10 @@ const charCounter = string => {
     })
     .sort((a, b) => {
       // Sort by ocurrence
-      // parseInt -> otherwise it will sort by string.length 
+      // parseInt -> otherwise it will sort by order
+      // ex: A < B thus 20 < 9
       // because string.split returns an array containing strings
+      // so its comparting the first char 
       const c = parseInt(a.split(':')[1]), d = parseInt(b.split(':')[1]) 
       if(c>d) return -1
       else if(c<d) return 1
